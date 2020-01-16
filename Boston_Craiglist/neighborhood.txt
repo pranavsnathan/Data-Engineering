@@ -1,0 +1,22 @@
+allston
+back Bay
+bay Village
+beacon Hill
+brighton
+charlestown
+chinatown/Leather District
+dorchester (divided for planning purposes into Mid Dorchester and Dorchester)
+downtown
+east Boston
+fenway Kenmore (includes Longwood)
+hyde Park
+jamaica Plain
+mattapan
+mission Hill
+north End
+roslindale
+roxbury
+south Boston
+south End
+west End
+west Roxbury

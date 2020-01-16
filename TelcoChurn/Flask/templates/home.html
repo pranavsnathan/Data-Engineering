@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Home</title>
+	<style>
+table{
+        font-family:"Georgia",serif;
+        height: 500px;
+        width: 300px;
+		}
+
+
+.container{
+        width:100%;
+        margin: auto;
+        overflow: hidden;
+}
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.drp{
+font-size: 14px;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+body {
+  background-image: url('./churn.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+	</style>
+</head>
+<html>
+<body style = "border: 2px solid black;width: 25%;margin-top: 5%;margin-left: 5%; background-repeat: no-repeat,">
+<form action="{{ url_for('predict')}}" method="POST">
+    <div class="abc">
+	<header>
+    <div class="container" align="center">
+			<h2>Telco Churn Prediction </h2>
+	</div>
+    </header>
+
+    <table align="center">
+      <th></th>
+        <tr>
+            <td>Tenure</td>
+            <td><input class = "field" type="number" name="tenure" min="1" max="72" required></td>
+        </tr>
+        <tr>
+            <td>Paperless Billing</td>
+            <td><select name="paperlessbilling" class ="drp" required>
+                <option value="1">Yes</option>
+		        <option value="0">No</option>
+		        </select></td>
+        </tr>
+        <tr>
+            <td>Monthly Charges</td>
+            <td><input type="number" name="monthlycharges" min="1" max="120" step=".01" required></td>
+        </tr>
+        <tr>
+            <td>Total Charges</td>
+            <td><input type="number" name="totalcharges" min="1" max="9000" step=".01" required></td>
+        </tr>
+        <tr>
+            <td>Fiber Optic Internet Service</td>
+            <td><select name="fiberoptic" class ="drp" required>
+                <option value="1">Yes</option>
+		        <option value="0">No</option>
+		        </select></td>
+        </tr>
+
+        <tr>
+            <td>Online Security</td>
+            <td><select name="onlinesecurity" class ="drp" required>
+                <option value="1">Yes</option>
+		        <option value="0">No</option>
+		        </select></td>
+        </tr>
+
+        <tr>
+            <td>Tech Support</td>
+            <td><select name="techsupport" class ="drp" required>
+		        <option value="1">Yes</option>
+		        <option value="0">No</option>
+		        </select></td>
+        </tr>
+
+        <tr>
+            <td>Monthly Contract</td>
+            <td><select name="monthlycontract" class ="drp" required>
+		        <option value="1">Yes</option>
+		        <option value="0">No</option>
+		        </select></td>
+        </tr>
+
+        <tr>
+            <td>Two Year Contract</td>
+            <td><select name="twoyearcontract" class ="drp" required>
+		        <option value="1">Yes</option>
+		        <option value="0">No</option>
+		        </select></td>
+        </tr>
+
+        <tr>
+            <td>Electronic Cheque Payment</td>
+            <td><select name="echequepayment" class ="drp" required>
+		        <option value="1">Yes</option>
+		        <option value="0">No</option>
+		        </select></td>
+        </tr>
+
+    </table>
+    <br>
+<div align="center">
+<input type="submit" class="btn-info" value="predict" align="center">
+</div><br>
+</div>
+</form>
+
+</body>
+</html>
