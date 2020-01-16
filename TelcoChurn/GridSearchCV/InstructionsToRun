@@ -1,0 +1,8 @@
+In order to run this particular luigi task, you can run the following command from the command line:
+python -m luigi --module gridsearch <function_name> --local-scheduler
+
+In order to run the docker file, create the Dockerfile as per the given format, go to Legacy Docker Terminal
+- Create a docker image by 
+   docker build -t <image-name> .
+- Run the docker file which has the luigi script as :
+   docker run <image-name> python /src/gridsearch.py upload_to_s3 --local-scheduler --inputLocation <Value>
