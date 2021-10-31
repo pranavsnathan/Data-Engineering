@@ -1,0 +1,31 @@
+· Packages of pythonà re, os,json, requests, boto3.+, numpy, bs4, datetime
+
+· Define a text file containing neighborhoods of interest in Boston
+
+· There was an input s3 bucket that had neighborhood txt file.
+
+· Defined a Function to read the file txt from file and stores the neighborhood as a list
+why json (AWS Glue has a transform called Relationalize that simplifies the extract, transform, load (ETL) process by converting nested JSON into columns that you can easily import into relational databases. Relationalize transforms the nested JSON into key-value pairs at the outermost level of the JSON document. The transformed data maintains a list of the original keys from the nested JSON separated by periods.)
+
+· Scraped Craigslist website using beautiful soup, python package to scrape
+
+· The way I accessed each neighborhood data is by building URL appending with each neighborhood. Passed the URL to beautiful soup and bs4 scrapes required data about apartments for rents, price how many bhk and area.
+
+· Stored the scraped data in another s3 bucket in the JSON format.
+
+· It was an attempt to create a stream of Boston rental data without having to trigger the pipeline manually
+
+· Scheduled scraping using AWS lambda.Lambda requires handler function that has an event and context
+ Lambda needs event and context to call the main function of lambda.
+
+·  For ETL orchestration, we used AWS glue. We defined crawler to determine the format, schema and store as metadata in Glue data catalog. AWS  glue automatically detects new file in folder.
+
+·  AWS Glue docs clearly states that Crawlers scrapes metadata information from the source (JDBS or s3) and populates Data Catalog (creates/updates DB and corresponding tables)
+
+·  Defined source , target and transformations.
+
+·  AWS glue used the metadata to apply some minimal transformations to meet the data type requirements and the final data is stored in s3 in parquet formats. Which is columnar format of storing data.
+
+·  Created tables in athena using the parquet files and stored the data in Athena to be used by Quicksight.
+
+·  Built an interactive dashboard to visualize timely trend of apartment rentals with different features
