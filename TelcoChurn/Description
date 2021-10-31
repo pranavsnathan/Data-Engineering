@@ -1,0 +1,40 @@
+· Telco Churn
+
+· Project to use luigi pipelining framework
+
+· Project aims to leverage luigi for building a machine learning pipeline.
+
+· The data being used from a telecom company to understand what factors would influence the attrition rate. Attrition, customers leaving the business.
+
+· Luigi workflow consists of tasks, targets and parameters. Task Execution and can state dependencies
+  Target -  Where you want to write the data or store the data
+
+· Parameters - Takes care of task parameterization.
+  Graphical user interface
+
+Description automatically generated
+
+Entire pipeline is divided into multiple luigi tasks performing different operations.
+First luigi task is to read the CSV:
+CSV files consists of telco data customer information , internet service, contract , billing, churn column .
+
+· Second step:
+
+Preprocessing a Dropped columns like customer id, converted the attributes for gender with 0 and 1.
+Attributes that has yes or no values to have 0,1
+cleaning data so it can be used for machine learning models.
+Dropped all null values
+assigning dummy values to few of the columns.
+stored as preprocess csv. These are clean features model.
+
+features. All columns except churn
+target is churn column.
+Defined a data frame to track the
+Dataframe had training , testing accuracies, false positive and the likes that would help decide which model is performing better.
+metrics of each machine earning model.  The final machinelearning model comparison is stored in CSV.
+Finally chose Random forest classifier model after fine tuned the model using grid search and then pickled it.
+
+The final output of the model is either 1 or 0. Used different models .
+
+Created a flask application with ten fields.  These were identified as determinant actors and based on this, the model would predict the churn factor for the customer.
+We dockerized the machin learning pickled file, requirements.txt and app.py the main runner of flask application.
